@@ -19,7 +19,7 @@ const page = () => {
           <MainForm setLoading={setLoading} setOutput={setOutput} />
           
 
-          <div className="-order-last md:order-last">
+          <div className="-order-last md:order-last mx-auto w-[350px]">
             <p className="font-semibold text-sm mb-2">Output</p>
             <Output loading={loading} output={output} />
           </div>

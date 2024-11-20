@@ -76,7 +76,7 @@ const MainForm = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-fit">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-fit mx-auto">
         <div className="mb-8">
           <FormField
             control={form.control}
