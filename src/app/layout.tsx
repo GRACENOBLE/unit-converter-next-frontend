@@ -13,9 +13,33 @@ import "./globals.css";
 //   weight: "100 900",
 // });
 const poppins = localFont({
-  src: "./fonts/Poppins.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  src: [
+    {
+      path: "./fonts/Poppins-Thin.woff",
+      weight: "100",
+    },
+    {
+      path: "./fonts/Poppins-Light.woff",
+      weight: "300",
+    },
+    {
+      path: "./fonts/Poppins-Regular.woff",
+      weight: "400",
+    },
+    {
+      path: "./fonts/Poppins-Medium.woff",
+      weight: "500",
+    },
+    {
+      path: "./fonts/Poppins-Bold.woff",
+      weight: "700",
+    },
+    {
+      path: "./fonts/Poppins-Black.woff",
+      weight: "900",
+    },
+  ],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -30,11 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${poppins.className} antialiased`}>{children}</body>
     </html>
   );
 }

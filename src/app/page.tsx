@@ -12,7 +12,7 @@ const page = () => {
   return (
     <section className="bg-[#f4f4f4] h-screen absolute top-0 w-full">
       <Container>
-        <h1 className="font-bold  text-center text-5xl md:text-6xl my-10">
+        <h1 className="font-bold  text-center text-5xl mt-10 mb-20 md:mb-10">
           UNIT CONVERTER
         </h1>
         <div className="grid md:grid-cols-2 ">
