@@ -46,14 +46,25 @@ const MainForm = ({
       .refine((val) => !isNaN(val) && val > 0, {
         message: "Value must be a positive number",
       }), // Ensure the value is positive
-    from: z.enum(unitList), // Ensure the unit is one of the predefined values
-    to: z.enum(unitList), // Ensure the unit is one of the predefined values
+    from: z
+      .string()
+      .transform((val) => val.toLowerCase()) // Convert input to lowercase
+      .refine((val) => unitList.includes(val as (typeof unitList)[number]), {
+        message: "Invalid unit",
+      }),
+    to: z
+      .string()
+      .transform((val) => val.toLowerCase()) // Convert input to lowercase
+      .refine((val) => unitList.includes(val as (typeof unitList)[number]), {
+        message: "Invalid unit",
+      }),
   });
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      value: 100,
       from: "",
       to: "",
     },
@@ -124,11 +135,7 @@ const MainForm = ({
                 <FormLabel>Unit</FormLabel>
                 <FormControl>
                   <Input
-                    //value={unit}
                     placeholder="m,km,ft. e.t.c"
-                    // onChange={(e) => {
-                    //   setUnit(e.target.value);
-                    // }}
                     {...field}
                     className="w-40 text-center"
                   />

@@ -6,36 +6,8 @@ export const GetUnits = async ({
   to,
 }: {
   value: number;
-  from:
-    | ""
-    | "nm"
-    | "μm"
-    | "mm"
-    | "cm"
-    | "m"
-    | "km"
-    | "in"
-    | "yd"
-    | "ft-us"
-    | "ft"
-    | "fathom"
-    | "mi"
-    | "nMi";
-  to:
-    | ""
-    | "nm"
-    | "μm"
-    | "mm"
-    | "cm"
-    | "m"
-    | "km"
-    | "in"
-    | "yd"
-    | "ft-us"
-    | "ft"
-    | "fathom"
-    | "mi"
-    | "nMi";
+  from: string;
+  to: string;
 }) => {
   const url = `https://unit-converter-go-backend-production.up.railway.app/convert?from=${from}&to=${to}&value=${value}
 `;
