@@ -15,8 +15,10 @@ const page = () => {
         <h1 className="font-bold  text-center text-5xl md:text-6xl my-10">
           UNIT CONVERTER
         </h1>
-        <div className="grid md:grid-cols-2">
+        <div className="grid md:grid-cols-2 ">
           <MainForm setLoading={setLoading} setOutput={setOutput} />
+          
+
           <div className="-order-last md:order-last">
             <p className="font-semibold text-sm mb-2">Output</p>
             <Output loading={loading} output={output} />

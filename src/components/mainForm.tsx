@@ -54,7 +54,6 @@ const MainForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      value: 0,
       from: "",
       to: "",
     },
@@ -77,7 +76,7 @@ const MainForm = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-fit" >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-fit">
         <div className="mb-8">
           <FormField
             control={form.control}
@@ -87,7 +86,7 @@ const MainForm = ({
                 <FormLabel>Value</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="shadcn"
+                    placeholder="100"
                     {...field}
                     className="w-40 text-center"
                   />
@@ -97,7 +96,7 @@ const MainForm = ({
               </FormItem>
             )}
           />
-        </div >
+        </div>
         <div className="flex gap-8 mb-8">
           <FormField
             control={form.control}
@@ -140,12 +139,10 @@ const MainForm = ({
             )}
           />
         </div>
-        <div>
 
         <Button type="submit" className="mt-4 w-full">
           Submit
         </Button>
-        </div>
       </form>
     </Form>
   );
