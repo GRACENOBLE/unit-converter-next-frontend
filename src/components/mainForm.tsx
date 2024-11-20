@@ -77,7 +77,7 @@ const MainForm = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-fit" >
         <div className="mb-8">
           <FormField
             control={form.control}
@@ -140,9 +140,12 @@ const MainForm = ({
             )}
           />
         </div>
-        <Button type="submit" className="mt-4">
+        <div>
+
+        <Button type="submit" className="mt-4 w-full">
           Submit
         </Button>
+        </div>
       </form>
     </Form>
   );
